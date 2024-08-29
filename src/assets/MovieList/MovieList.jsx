@@ -3,11 +3,10 @@ import "./MovieList.css";
 import _ from "lodash";
 
 // import from source folder
-import Fire from "../../assets/fire.png";
 import MovieCard from "./MovieCard";
 import FilterGroup from "./FilterGroup";
 
-const MovieList = () => {
+const MovieList = ({ type, title, emoji }) => {
   const [moviesList, setMoviesList] = useState([]);
   const [filterMoviesList, setFilterMoviesList] = useState([]);
   const [minRating, setMinRating] = useState(0);
@@ -18,7 +17,7 @@ const MovieList = () => {
 
   const fetchMovies = async () => {
     const response = await fetch(
-      "https://api.themoviedb.org/3/movie/popular?api_key=89f974224cfce0ee6bec9a3d4bda6206#"
+      `https://api.themoviedb.org/3/movie/${type}?api_key=89f974224cfce0ee6bec9a3d4bda6206#`
     );
     const data = await response.json();
     setMoviesList(data.results);
@@ -61,11 +60,11 @@ const MovieList = () => {
   }, []);
 
   return (
-    <section className="movie_list">
+    <section className="movie_list" id={type}>
       <header className="align_center movie_list_header">
         <h2 className="align_center movie_list_heading">
-          Popular
-          <img src={Fire} alt="fire emoji" className="navbar_emoji" />
+          {title}
+          <img src={emoji} alt={`${emoji} icon`} className="navbar_emoji" />
         </h2>
 
         <div className="align_center movie_list_fs">
