@@ -2,6 +2,10 @@
 
 A sleek movie listing website similar to Netflix, developed with ReactJS, HTML, and CSS. Filter and sort movies by rating and date to find your next watch!
 
+## Demo
+
+<img width="1680" alt="Screenshot 2024-09-05 at 12 04 27 AM" src="https://github.com/user-attachments/assets/ce8b760d-d17a-411f-89da-5261ca22b69d">
+
 
 ## Features
 - Movie categories including Popular, Star, and Party movies
